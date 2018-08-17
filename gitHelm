@@ -10,3 +10,8 @@ cd charts
 git checkout efdcffe0b6973111ec6e5e83136ea74cdbe6527d
 cd ../
 vi prometheus-values.yml
+
+#Run below command after above .yml is added
+helm install -f prometheus-values.yml charts/stable/prometheus --name prometheus --namespace prometheus
+kubectl get pods-n prometheus
+vi grafana-values.yml
