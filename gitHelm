@@ -15,3 +15,7 @@ vi prometheus-values.yml
 helm install -f prometheus-values.yml charts/stable/prometheus --name prometheus --namespace prometheus
 kubectl get pods-n prometheus
 vi grafana-values.yml
+
+#Run below command after above .yml is added
+helm install -f grafana-values.yml charts/stable/grafana/ --name grafana --namespace grafana
+vi grafana-ext.yml
