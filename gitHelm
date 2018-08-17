@@ -1,0 +1,11 @@
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > /tmp/get_helm.sh
+chmod 700 /tmp/get_helm.sh
+DESIRED_VERSION=v2.8.2 /tmp/get_helm.sh
+kubectl --namespace=kube-system create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:default
+helm ls
+cd ~/
+git clone https://github.com/kubernetes/charts
+cd charts
+git checkout efdcffe0b6973111ec6e5e83136ea74cdbe6527d
+cd ../
+vi prometheus-values.yml
