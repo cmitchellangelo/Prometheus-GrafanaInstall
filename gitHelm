@@ -19,3 +19,12 @@ vi grafana-values.yml
 #Run below command after above .yml is added
 helm install -f grafana-values.yml charts/stable/grafana/ --name grafana --namespace grafana
 vi grafana-ext.yml
+
+#Run below command after above .yml is added
+kubectl apply -f grafana-ext.yml
+
+kubectl get pods -n prometheus
+kubectl get pods -n grafana
+
+In Grafana, choose Data Sources and add under HTTP URL: HTTP://prometheus-server.prometheum.svc.cluster.local
+Set Access to Default
